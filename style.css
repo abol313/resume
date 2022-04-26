@@ -1,5 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+@font-face {
+    font-family:Tanha;
+    src:url(fonts/Tanha.eot) format("embedded-opentype"),
+        url(fonts/Tanha.ttf) format("truetype"),
+        url(fonts/Tanha.woff) format("woff"),
+        url(fonts/Tanha.woff2) format("woff2");
+}
+
+body{
+    background-color:#151515;
+    color:cyan;
+    --lang-en-display:static;
+    --lang-fa-display:none;
+    --fa-bg-color:transparent;
+    --fa-color:cyan;
+    --en-bg-color:cyan;
+    --en-color:#151515;
+
+    font-family: 'Varela Round',cursive;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
 
 img{
     height:300px;
+}
+
+header{
+    max-width:500px;
+    padding:20px 0px;
+    border:1px solid cyan;
+    align-self:center;
+    border-radius:100px;
+}
+header figure{
+    margin:0px 40px 0px 20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    align-items:center;
+    gap:20px;
+}
+
+@media screen and (max-width:449px){
+    header{
+        padding:20px 35px;
+        text-align:center;
+    }
+    header figure{
+        margin:0;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+        align-items:center;
+        gap:20px;
+    }
+    
+}
+
+
+header figure img{
+    width:100px;
+    height:100px;
+    border-radius:100%;
+}
+header figure figcaption{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+header figure figcaption > *{
+    margin:0;
+}
+
+nav{
+    position:sticky;
+    z-index:3;
+    box-shadow:0 0 10px #151515,0 0 10px #151515;
+    top:10px;
+    align-self:center;
+    border:1px solid cyan;
+    border-radius:100px;
+    background-color:rgba(21, 21, 21, 0.4);
+    backdrop-filter:blur(5px);
+}
+nav ul{
+    margin:0;
+    padding:0px;
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    width:200px;
+    max-width:80vw;
+    justify-content:space-evenly;
+}
+
+nav ul li{
+    border-radius:100px;
+    flex-grow:1;
+    text-align: center;
+    transition:background-color 1s;
+}
+nav ul li:nth-child(1){
+    background-color:var(--en-bg-color);
+    color:var(--en-color);
+    font-family:'Varela Round',cursive;
+}
+nav ul li:nth-child(2){
+    background-color:var(--fa-bg-color);
+    color:var(--fa-color);
+    font-family:'Tanha',sans-serif;
+}
+
+main{
+    border:1px solid cyan;
+    border-radius:10px;
+    display:flex;
+    flex-wrap:wrap;
+    padding:10px;
+}
+main img{
+    width:70px;
+    height:auto;
+}
+
+main .about_me{
+    width:100%;
+    text-align:center;
+
+}
+
+main .abilities{
+    width:auto;
+    border:1px solid cyan;
+    display:flex;
+    flex-wrap:wrap;
+    align-content:flex-start;
+    max-width: 600px;
+    overflow:auto;
+}
+main .abilities > div {
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    border: 1px solid cyan;
+    flex-grow:1;
+    padding:10px;
+}
+main .abilities > div > *{
+    margin:0;
+}
+
+main .some_projects{
+    width:200px;
+    flex-grow:1;
+    display:flex;
+    flex-wrap:nowrap;
+}
+main .some_projects > div{
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    
+}
+main .title{
+    text-align:center;
+    letter-spacing:3px;
+    width:100%;
+    flex-grow:1;    
+}
+main .some_projects > div img {
+    width:auto;
+    height:300px;
+}
+
+.a_rate{
+    width:10px;
+    height:10px;
+    border-radius:100%;
+    background-color:gold;
+}
+*:lang(en){
+    font-family:'Varela Round',cursive;
+    direction:ltr !important;
+    display:var(--lang-en-display);
+}
+*:lang(fa){
+    font-family:'Tanha',sans-serif;
+    direction:rtl !important;
+    display:var(--lang-fa-display);
+}
+
+img{
+    filter:contrast(1.5);
 }
