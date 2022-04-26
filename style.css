@@ -18,6 +18,8 @@ body{
     --en-bg-color:cyan;
     --en-color:#151515;
 
+    --half-bg-color:rgba(0, 255, 255, 0.274);
+
     font-family: 'Varela Round',cursive;
     display:flex;
     flex-direction:column;
@@ -116,10 +118,11 @@ nav ul li:nth-child(2){
 }
 
 main{
-    border:1px solid cyan;
+    
     border-radius:10px;
     display:flex;
     flex-wrap:wrap;
+    justify-content:space-around;
     padding:10px;
     gap:10px;
 }
@@ -134,9 +137,20 @@ main .about_me{
 
 }
 
+main .title{
+    text-align:center;
+    letter-spacing:3px;
+    width:100%;
+    flex-grow:1;    
+    border-bottom:1px solid cyan;
+    margin-bottom:0px;
+}
+
+
+/*abilities*/
 main .abilities{
     width:auto;
-    border:1px solid cyan;
+    gap:10px;
     display:flex;
     flex-wrap:wrap;
     align-content:flex-start;
@@ -149,23 +163,32 @@ main .abilities > div {
     align-items:center;
     justify-content:center;
     gap:5px;
-    border: 1px solid cyan;
     flex-grow:1;
     padding:10px;
+    background-color:var(--half-bg-color);
+    transition:all 200ms;
+
+}
+main .abilities > div:hover {
+    background-color:rgba(0, 255, 255, 0.5);
 }
 main .abilities > div > *{
     margin:0;
 }
 
+/*some projects*/
 main .some_projects{
     width:400px;
+    max-width: 100%;
     flex-grow:1;
     display:flex;
+    gap:10px;
     flex-direction:column;
     flex-wrap:nowrap;
 }
 main .some_projects .container{
     flex-grow:1;
+    gap:20px;
     display:flex;
     flex-wrap:nowrap;
     overflow:auto;
@@ -175,19 +198,133 @@ main .some_projects .container > div{
     height:400px;
     display:flex;
     flex-direction:column;
-    
-}
-main .title{
+    background-color:cyan;
+    border-radius:30px;
+    overflow:hidden;
+    min-width:fit-content;
+    color:#151515;
     text-align:center;
-    letter-spacing:3px;
-    width:100%;
-    flex-grow:1;    
+    justify-content:space-between;
+}
+main .some_projects .container > div *{
+    margin:0;
+}
+main .some_projects .container > div figcaption{
+    margin:20px;
 }
 main .some_projects .container> div img {
     width:auto;
     height:300px;
     filter:none;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
 }
+
+/*lang abilites*/
+main .lang_abilities{
+    
+    display:flex;
+    flex-wrap:wrap;
+    align-content:flex-start;
+    width: 300px;
+    flex-grow: 0;
+    gap:10px;
+}
+main .lang_abilities > div {
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    flex-grow:1;
+    padding:10px;
+    background-color:var(--half-bg-color);
+    transition:all 200ms;
+}
+main .lang_abilities > div:hover {
+    background-color:rgba(0, 255, 255, 0.5);
+}
+
+main .lang_abilities > div > *{
+    margin:0;
+}
+
+/*contact*/
+main .contact{
+    display:flex;
+    gap:10px;
+    flex-direction:column;
+    align-self:flex-start;
+}
+main .contact .container{
+    display:flex;
+    gap:10px;
+    flex-direction:column;
+}
+
+main .contact .container> * {
+    display:flex;
+    align-items:center;
+    background-color:cyan;
+    border-radius:50px;
+    color:#151515;
+    font-weight:bold;
+    padding:50px;
+    min-height:100px;
+}
+main .contact .container> *:hover {
+    background-color:var(--half-bg-color);
+}
+main .contact .container> *:hover a{
+    color:cyan;
+}
+
+/*social_medias*/
+main .social_medias{
+    display:flex;
+    gap:10px;
+    flex-direction:column;
+}
+main .social_medias .container{
+    display:flex;
+    gap:10px;
+    flex-direction:column;
+}
+
+main .social_medias .container> * {
+    display:flex;
+    align-items:center;
+    background-color:cyan;
+    border-radius:50px;
+    color:#151515;
+    font-weight:bold;
+    padding:50px;
+    min-height:100px;
+}
+
+
+main .social_medias .container> *:hover {
+    background-color:var(--half-bg-color);
+}
+main .social_medias .container> *:hover a{
+    color:cyan;
+}
+main .social_medias .container a {
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+
+/*footer*/
+footer{
+    border-top:1px solid cyan;
+    text-align:center;
+}
+
+
+/**/
+
 
 .a_rate{
     width:10px;
@@ -197,15 +334,22 @@ main .some_projects .container> div img {
 }
 *:lang(en){
     font-family:'Varela Round',cursive;
-    direction:ltr !important;
     display:var(--lang-en-display);
 }
 *:lang(fa){
     font-family:'Tanha',sans-serif;
-    direction:rtl !important;
     display:var(--lang-fa-display);
 }
-
+*::selection{
+    background-color:cyan;
+    color:dark;
+    border:1px solid yellow;
+}
 img{
     filter:contrast(1.5);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
 }
