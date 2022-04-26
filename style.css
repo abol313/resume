@@ -24,6 +24,7 @@ body{
     display:flex;
     flex-direction:column;
     gap:10px;
+    justify-content:flex-start;
 }
 
 img{
@@ -384,7 +385,7 @@ footer:hover{
 }
 *::selection{
     background-color:cyan;
-    color:dark;
+    color:darkcyan;
     border:1px solid yellow;
 }
 img{
