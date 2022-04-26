@@ -274,8 +274,6 @@ main .contact .container> * {
 }
 main .contact .container> *:hover {
     background-color:var(--half-bg-color);
-}
-main .contact .container> *:hover a{
     color:cyan;
 }
 
