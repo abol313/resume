@@ -185,13 +185,19 @@ main .some_projects{
     gap:10px;
     flex-direction:column;
     flex-wrap:nowrap;
+    position:relative;
+    overflow-y:hidden;
+    overflow-x:visible;
 }
 main .some_projects .container{
+    border:none;
     flex-grow:1;
     gap:20px;
     display:flex;
     flex-wrap:nowrap;
     overflow:auto;
+    border-radius:30px;
+    /* position:relative; */
 }
 
 main .some_projects .container > div{
@@ -212,10 +218,29 @@ main .some_projects .container > div *{
 main .some_projects .container > div figcaption{
     margin:20px;
 }
+main .some_projects .container .slider_left{
+    position:absolute;
+    left:-1px;
+    width:40px;
+    height:100%;
+    border-radius:0;
+    flex-shrink:0;
+    background:linear-gradient(to right,#151515 ,#15151500);
+}
+main .some_projects .container .slider_right{
+    position:absolute;
+    right:-1px;
+    width:40px;
+    height:100%;
+    border-radius:0;
+    flex-shrink:0;
+    background:linear-gradient(to left,#151515 ,#15151500);
+}
+
 main .some_projects .container> div img {
     width:auto;
     height:300px;
-    filter:none;
+    filter:saturate(2) contrast(1.5);
     border-bottom-left-radius:20px;
     border-bottom-right-radius:20px;
 }
@@ -255,6 +280,8 @@ main .contact{
     gap:10px;
     flex-direction:column;
     align-self:flex-start;
+    max-width:100%;
+    word-break:break-all;
 }
 main .contact .container{
     display:flex;
@@ -282,6 +309,7 @@ main .social_medias{
     display:flex;
     gap:10px;
     flex-direction:column;
+    max-width:100%;
 }
 main .social_medias .container{
     display:flex;
@@ -316,10 +344,26 @@ main .social_medias .container a {
 
 /*footer*/
 footer{
-    border-top:1px solid cyan;
     text-align:center;
-}
+    background-color:var(--half-bg-color);
+    transition:all 1s ease-in;
+    margin:0px -8px -16px;
 
+}
+footer hr{
+    margin-top:0;
+    width:205px;
+    max-width:calc(100% - 2px);
+    transition:all 1s;
+    border-color:cyan;
+}
+footer:hover hr{
+    width:calc(100% - 3px);
+}
+footer:hover{
+    background-color:cyan;
+    color:#151515;
+}
 
 /**/
 
